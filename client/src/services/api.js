@@ -9,19 +9,19 @@ const API = axios.create({
 });
 
 export const registerUser = (username) => {
-    API.post("/auth/register", {username});
+   return API.post("/auth/register", {username});
 }
 
 export const getRooms = () => {
-    API.get("/rooms");
+   return API.get("/rooms");
 }
 
 export const createRoom = (name) => {
-    API.post("/rooms", {name});
+   return API.post("/rooms", {name});
 }
 
 export const getMessages = (roomId) => {
-    API.get(`/messages/${roomId}`);
+   return API.get(`/messages/${roomId}`);
 }
 
 export const socket = io(backendBaseUrl, {autoconnect: false});
